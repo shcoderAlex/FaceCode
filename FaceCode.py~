@@ -1,0 +1,22 @@
+import sublime, sublime_plugin, os,time, string, re
+from datetime import datetime, timedelta
+
+class FaceCodeCommand(sublime_plugin.EventListener):
+	def __init__(self):
+		self.cnt = 0
+		self.settings = sublime.load_settings("FaceCode.sublime-settings")
+		self.facecode = self.settings.get("facecode")
+		self.time_format = self.settings.get("time_format")
+		self.path = self.settings.get("path_save_photo")
+		self.device = self.settings.get("device")
+		self.count_save = self.settings.get("count_save")
+		exit()
+
+	def on_pre_save(self, view):
+		print self.count_save
+		 # if countSave % 10 == 0:
+		# 	dt = datetime.now()
+		# 	ds = str(dt.strftime("%d_%m_%y_%H_%M_%S"))
+		# 	os.system("streamer -c /dev/video0 -o /home/alex/webcam/"+ds+".jpeg")
+		# 	# os.system("cp  /home/alex/webcam/"+ds+".jpeg /home/alex/Dropbox/all_ppl/Shcoder/webmorda/")
+		self.count_save += 1
