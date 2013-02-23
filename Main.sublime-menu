@@ -19,11 +19,6 @@
                                 "command": "open_file",
                                 "args": {"file": "${packages}/FaceCode/FaceCode.sublime-settings"},
                                 "caption": "Settings – Default"
-                            },
-                            {
-                                "command": "open_file",
-                                "args": {"file": "${packages}/User/FaceCode.sublime-settings"},
-                                "caption": "Settings – User"
                             }
                         ]
                     }

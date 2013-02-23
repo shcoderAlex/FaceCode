@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 class FaceCodeCommand(sublime_plugin.EventListener):
 
 	def __init__(self):
-		self.cnt         = 0
+		self.cnt         = 1
 		self.settings    = sublime.load_settings("FaceCode.sublime-settings")
 		self.facecode    = self.settings.get("facecode")
 		self.time_format = self.settings.get("time_format")
@@ -31,9 +31,9 @@ class FaceCodeCommand(sublime_plugin.EventListener):
 		return
 
 	def get_file_name(self):
-		dt = datetime.now()
-		ds = str(dt.strftime(self.time_format))
-		return ds+"."+self.img_format
+		date_time = datetime.now()
+		date_time = str(date_time.strftime(self.time_format))
+		return date_time+"."+self.img_format
 
 	def save_photo(self):
 		os.system("streamer -c "+self.device+" -o "+self.path_photo+self.filename)
